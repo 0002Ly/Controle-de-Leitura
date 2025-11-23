@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Controle de Leitura - Escola</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Controle de Leitura - Escola</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>📚 Controle de Leitura</h1>
+    <div class="header-controls">
+      <label class="theme-label">Tema:
+        <input id="themeColor" type="color" title="Escolher cor do tema">
+      </label>
+      <button id="resetData" title="Limpar tudo">Limpar dados</button>
+    </div>
+  </header>
 
+  <main class="container">
+    <!-- ALUNOS -->
+    <section class="card" id="alunos-card">
+      <h2>Cadastro de Alunos</h2>
+      <div class="form-row">
+        <input id="nomeAluno" placeholder="Nome do aluno" />
+        <input id="corAlunoDefault" type="color" title="Cor padrão do aluno" value="#ffd166"/>
+        <button id="btnAddAluno">Adicionar Aluno</button>
+      </div>
+      <ul id="listaAlunos" class="lista"></ul>
+    </section>
 
-<header>
-<h1>📚 Controle de Leitura</h1>
-<nav>
-<a href="#alunos">Alunos</a>
-<a href="#livros">Livros</a>
-<a href="#registros">Registros</a>
-</nav>
-</header>
+    <!-- LIVROS -->
+    <section class="card" id="livros-card">
+      <h2>Cadastro de Livros</h2>
+      <div class="form-row">
+        <input id="nomeLivro" placeholder="Título do livro" />
+        <button id="btnAddLivro">Adicionar Livro</button>
+      </div>
+      <ul id="listaLivros" class="lista"></ul>
+    </section>
 
+    <!-- REGISTROS -->
+    <section class="card" id="registros-card">
+      <h2>Registros de Leitura</h2>
+      <div class="form-row">
+        <select id="selAluno"></select>
+        <select id="selLivro"></select>
+        <select id="selStatus">
+          <option value="Não iniciado">Não iniciado</option>
+          <option value="Lendo">Lendo</option>
+          <option value="Lido">Lido</option>
+        </select>
+        <button id="btnAddRegistro">Registrar</button>
+      </div>
+      <ul id="listaRegistros" class="lista"></ul>
+    </section>
+  </main>
 
-<div class="container">
-<div class="card" id="alunos">
-<h2>Cadastro de Alunos</h2>
-<input id="nomeAluno" placeholder="Nome do aluno">
-<button onclick="adicionarAluno()">Adicionar Aluno</button>
-<ul id="listaAlunos"></ul>
-</div>
-
-
-<div class="card" id="livros">
-<h2>Cadastro de Livros</h2>
-<input id="nomeLivro" placeholder="Título do livro">
-<button onclick="adicionarLivro()">Adicionar Livro</button>
-<ul id="listaLivros"></ul>
-</div>
-
-
-<div class="card" id="registros">
-<h2>Registros de Leitura</h2>
-<select id="selAluno"></select>
-<select id="selLivro"></select>
-<select id="selStatus">
-<option value="Lido">Lido</option>
-<option value="Lendo">Lendo</option>
-<option value="Não iniciado">Não iniciado</option>
-</select>
-<button onclick="adicionarRegistro()">Registrar Leitura</button>
-<ul id="listaRegistros"></ul>
-</div>
-</div>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
